@@ -39,16 +39,16 @@ const printPlaylists = function() {
   let musicCate=(Object.values(library))[1];
   let playlistKeyNumArr=Object.keys(musicCate);
   let playlistKey=Object.values(musicCate);
-  for ( let i=0; i<playlistKeyNum.length; i++){ 
-  console.log(playlistKey[i]);
-  //let playlistKeyObNameOfTrack=playlistKey[i]["name"];
-   // let playlistKeyObNumOfTracks=playlistKey[i]["tracks"].length+1;
-    //let playlistKeyObIDOfTrack=playlistKey[i]["id"];
-    //console.log(playlistKeyObNameOfTrack);
-    //console.log(laylistKeyObNumOfTracks);
-    //console.log(laylistKeyObIDOfTracks);
+  for ( let i=0; i<playlistKeyNumArr.length; i++){ 
+  //console.log(playlistKey[1]);
+  let playlistKeyObNameOfTrack=playlistKey[i]["name"];
+  let playlistKeyObNumOfTracks=playlistKey[i]["tracks"].length+1;
+  let playlistKeyObIDOfTrack=playlistKey[i]["id"];
+
+//   console.log(playlistKeyObNameOfTrack);
+//   console.log(playlistKeyObNumOfTracks);
+  console.log(playlistKeyObIDOfTrack + ": "+  playlistKeyObNameOfTrack + " - "+playlistKeyObNumOfTracks + " tracks" );
   }
-  
 }
 printPlaylists(library);
 
