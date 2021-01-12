@@ -23,51 +23,64 @@ const library = {
              }
 };
 
+// ['t01', t02', 't03']
+
 
 /////////////////////////////
 // FUNCTIONS TO IMPLEMENT:
 /////////////////////////////
 
 // prints a list of all playlists, in the form:
-// p01: Coding Music - 2 tracks
-// p02: Other Playlist - 1 tracks
+//p01: Coding Music - 2 tracks
+//p02: Other Playlist - 1 tracks
+
 // playlistKeyObIDOfTrack + ": "+  playlistKeyObNameOfTrack + " - "playlistKeyObNumOfTracks + " tracks"
-const printPlaylists = function() {
+const printPlaylists = function(lib) {
  // get the inner {} ---> Object.values
- 
+  let result = '';
  // playlist's object {}
-  let musicCate=(Object.values(library))[1];
-  let playlistKeyNumArr=Object.keys(musicCate);
-  let playlistKey=Object.values(musicCate);
+  const musicCate=(Object.values(lib))[1];
+  const playlistKeyNumArr=Object.keys(musicCate);
+  const playlistKey=Object.values(musicCate);
   for ( let i=0; i<playlistKeyNumArr.length; i++){ 
   //console.log(playlistKey[1]);
-  let playlistKeyObNameOfTrack=playlistKey[i]["name"];
-  let playlistKeyObNumOfTracks=playlistKey[i]["tracks"].length+1;
-  let playlistKeyObIDOfTrack=playlistKey[i]["id"];
-
-//   console.log(playlistKeyObNameOfTrack);
-//   console.log(playlistKeyObNumOfTracks);
-  console.log(playlistKeyObIDOfTrack + ": "+  playlistKeyObNameOfTrack + " - "+playlistKeyObNumOfTracks + " tracks" );
-  }
+    let playlistKeyObNameOfTrack=playlistKey[i]["name"];
+    let playlistKeyObNumOfTracks=playlistKey[i]["tracks"].length+1;
+    let playlistKeyObIDOfTrack=playlistKey[i]["id"];
+    result += playlistKeyObIDOfTrack + ": "+  playlistKeyObNameOfTrack + " - "+playlistKeyObNumOfTracks + " tracks" + "\n"
+   }
+  return result;
 }
-printPlaylists(library);
+console.log(printPlaylists(library));
 
 // return playlistKeyObIDOfTrack + ": "+  playlistKeyObNameOfTrack + " - "+playlistKeyObNumOfTracks + " tracks"; 
 
 
 
 
-// ////==== this ====////
-// // prints a list of all tracks, using the following format:
-// // t01: Code Monkey by Jonathan Coulton (Thing a Week Three)
-// // t02: Model View Controller by James Dempsey (WWDC 2003)
-// // t03: Four Thirty-Three by John Cage (Woodstock 1952)
-// const printTracks = function() {
+////==== this ====////
+// prints a list of all tracks, using the following format:
+// t01: Code Monkey by Jonathan Coulton (Thing a Week Three)
+// t02: Model View Controller by James Dempsey (WWDC 2003)
+// t03: Four Thirty-Three by John Cage (Woodstock 1952)
+const printTracks = function(lib2) {
+   let result = '';
+   const musicCate=(Object.values(lib2))[0];
+   const playlistKeyNumArr=Object.keys(musicCate);
+   const playlistKey=Object.values(musicCate);
+   for ( let i=0; i<playlistKeyNumArr.length; i++){ 
+     let playlistKeyObNameOfTrack=playlistKey[i]["name"];
+     let playlistKeyObArtistOfTracks=playlistKey[i]["artist"];
+     let playlistKeyObAlbumOfTracks=playlistKey[i]["album"];
+     let playlistKeyObIDOfTrack=playlistKey[i]["id"];
+     result += playlistKeyObIDOfTrack + ": "+  playlistKeyObNameOfTrack + " by "+playlistKeyObArtistOfTracks + " ("+ playlistKeyObAlbumOfTracks+ ") " + "\n"
+    }
+  return result;
+}
+console.log(printTracks(library));
 
-// }
-
 // ////==== this ====////
-// // prints a list of tracks for a given playlist, using the following format:
+// // prints a list of tracks for a given playlist, using the following format: 
 // // p01: Coding Music - 2 tracks
 // // t01: Code Monkey by Jonathan Coulton (Thing a Week Three)
 // // t02: Model View Controller by James Dempsey (WWDC 2003)
