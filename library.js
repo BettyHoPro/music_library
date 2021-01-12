@@ -39,7 +39,8 @@ let d=Object.values(Object.values(library)[0])[1].name;
 let methodResult;
 let whichTrack="";
 // choice method to find the tracks
-const choiceMethod = (method) => {
+//trackArr: push the number into the array when user press the btns.
+const choiceMethod = ( method, trackArr ) => {
   for ( let i=0; i<Object.keys(library).length; i++ ){
    if(Object.keys(library)[i] === method){
       methodResult=Object.values(library)[i];
@@ -50,9 +51,9 @@ const choiceMethod = (method) => {
       // whichTrack=Object.keys(methodResult)[1];
       // console.log(whichTrack); 
       //if ( num1 === "all" ){
-        const whichTrackWant =( num )=>{
 
-        };
+      
+      
         for ( let w=0; w<Object.keys(methodResult).length; w++ ){
           whichTrack=Object.keys(methodResult)[w].toString();
           console.log(whichTrack); 
@@ -76,8 +77,8 @@ const choiceMethod = (method) => {
   }
 
 }; 
-choiceMethod("tracks", );
-whichTrackWant( 0, 1 );
+choiceMethod("tracks", [0,1] );
+
 
 // for( let i in d ){
 //   console.log(i);
